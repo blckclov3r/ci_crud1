@@ -16,12 +16,14 @@
  		}
 
  		function getAllData(){
- 			$query = $this->db->query("SELECT * FROM users");
+ 			// $query = $this->db->query("SELECT * FROM users");
+ 			$query = $this->db->get('users');
  			return $query->result();
  		}
 
  		function getData($id){
- 			$query = $this->db->query("SELECT * FROM users WHERE id = '$id'");
+ 			// $query = $this->db->query("SELECT * FROM users WHERE id = '$id'");
+ 			$query = $this->db->get_where('users',array('id'=>$id));
  			return $query->row();
  		}
 
@@ -36,8 +38,9 @@
  		}
 
  		function deleteData($id){
- 			$this->db->where('id',$id);
- 			$this->db->delete('users');
+ 			// $this->db->where('id',$id);
+ 			// $this->db->delete('users');
+ 			$this->db->delete('users', array('id' => $id));
  		}
 
  	}
