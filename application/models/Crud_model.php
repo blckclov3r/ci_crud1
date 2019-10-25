@@ -43,5 +43,7 @@
  			$this->db->delete('users', array('id' => $id));
  		}
 
+ 		
+
  	}
  ?>
